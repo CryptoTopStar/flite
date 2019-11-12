@@ -1,0 +1,75 @@
+<table style="border: 1px solid #9e9f9e73" width="100%">
+  <tr>
+    <th style="text-align:center; color:#a0a0a0">
+      AJAX JETS - Quote Request Details
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr style="background-color:#e1e1e1;">
+          <th colspan="2" align="left">Customer Details</th>
+        </tr>
+        <tr>
+          <td colspan="2" style="border: 1px solid #eee;">
+            {{ firstName }} {{ lastName }}
+          </td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #eee;">{{ email }}</td>
+          <td style="border: 1px solid #eee;">{{ phoneNo }}</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #eee;">
+            Total fly hours in year: {{ flyPrivately }}
+          </td>
+          <td style="border: 1px solid #eee;">
+            Current mode of travel: {{ currentlyTravel }}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr style="background-color:#e1e1e1;">
+            <th colspan="7" style="border: 1px solid #eee;" align="left">
+              {{ type }}
+            </th>
+          </tr>
+          <tr>
+            <th style="border: 1px solid #eee;">Leg</th>
+            <th style="border: 1px solid #eee;">Aircraft Name</th>
+            <th style="border: 1px solid #eee;">From </th>
+            <th style="border: 1px solid #eee;">To </th>
+            <th style="border: 1px solid #eee;">Date</th>
+            <th style="border: 1px solid #eee;">Time</th>
+            <th style="border: 1px solid #eee;">Passenger Details</th>
+          </tr>
+          {{#each quoteData as |quote|}}
+          <tr>
+            <td style="border: 1px solid #eee;">
+              {{ quote.legName }}
+            </td>
+            <td style="border: 1px solid #eee;">
+              {{ quote.selectedAircraft }}
+            </td>
+
+            <td style="border: 1px solid #eee;">{{ quote.fromLocation }}</td>
+            <td style="border: 1px solid #eee;">{{ quote.toLocation }}</td>
+            <td style="border: 1px solid #eee;">{{ quote.date }}</td>
+            <td style="border: 1px solid #eee;">{{ quote.time }}</td>
+            <td style="border: 1px solid #eee;">
+              <div>Adults: {{ quote.adults }}</div>
+              <div>Children: {{ quote.children }}</div>
+              <div>Infants: {{ quote.infants }}</div>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
