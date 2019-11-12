@@ -1,9 +1,9 @@
+#!/usr/bin/env node
 const express = require('express');
 const app = express();
 const port = 3000;
 const { emailSetting, toEmail } = require('./config');
 const Email = require('./email');
-const ContactUs = require('./contactus');
 
 const bodyParser = require('body-parser');
 const cors = require('cors');
