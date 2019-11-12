@@ -1,12 +1,12 @@
-const nodemailer = require('nodemailer');
-const handlebars = require('handlebars');
-const fs = require('fs');
-const path = require('path');
+const nodemailer = require("nodemailer");
+const handlebars = require("handlebars");
+const fs = require("fs");
+const path = require("path");
 const appDir = path.dirname(require.main.filename);
-const { emailSetting } = require('./config');
+const { emailSetting } = require("./config");
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.sendgrid.net',
+  host: "smtp.sendgrid.net",
   port: 587,
   secure: false, // true for 465, false for other ports
   auth: {
@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
 });
 
 var readHTMLFile = function(path, callback) {
-  fs.readFile(path, { encoding: 'utf-8' }, function(err, html) {
+  fs.readFile(path, { encoding: "utf-8" }, function(err, html) {
     if (err) {
       throw err;
     } else {
@@ -36,13 +36,14 @@ class Email {
         from: from,
         to: to,
         subject: subject,
-        html: htmlToSend
+        html: htmlToSend,
+        isMultiple: true
       };
       transporter.sendMail(mailOptions, function(error, response) {
         if (error) {
-          console.log('email error', error);
+          console.log("email error", error);
         } else {
-          console.log('email response', response);
+          console.log("email response", response);
         }
       });
     });
