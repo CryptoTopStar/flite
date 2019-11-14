@@ -4,9 +4,9 @@ Description=ajax-jets
 [Service]
 ExecStart= /home/sce1/my-work/ankur_task/jet-flight/ajaxjets-backend/ajaxjets-app.js
 Restart=always
-User=nobody
+User=sce1
 # Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
-Group=nobody
+Group=sce1
 Environment=PATH=/usr/bin:/usr/local/bin
 Environment=NODE_ENV=production
 WorkingDirectory=/home/sce1/my-work/ankur_task/jet-flight/ajaxjets-backend
