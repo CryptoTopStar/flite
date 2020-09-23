@@ -1,0 +1,15 @@
+[Unit]
+Description=ajaxjets-server
+
+[Service]
+ExecStart=/opt/ajaxjets/ajaxjets-server/ajaxjets-app.js
+Restart=always
+User=dev
+# Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+Group=dev
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/opt/ajaxjets/ajaxjets-server
+
+[Install]
+WantedBy=multi-user.target
