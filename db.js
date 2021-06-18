@@ -3,7 +3,7 @@ const mysql = require("mysql2");
 const { dbHost, dbPort, dbUser, dbPwd, dbName } = require("./config");
 
 class Db {
-  pool = null;
+  // pool = null;
   constructor() {
     this.pool = mysql.createPool({
       host: dbHost,
